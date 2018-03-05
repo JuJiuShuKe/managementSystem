@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("../imgs/yy4.jpg");
+    background-size: 100%;
+}
+.box{
+    width:1000px;
+    hieght:800px;
+    margin:50px auto;
+}

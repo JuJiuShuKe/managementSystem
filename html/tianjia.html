@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/tianjia.css">
+    <script src="../js/echarts.min.js"></script>
+    <script src="../js/jquery-3.2.0.min.js"></script>
+    <script src="laydate/laydate.js"></script>
+    <script src="../js/zhongxiaodie.js"></script>
+    <title>ACE公司管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        var cookie = document.cookie.split('; ');
+        var value ='';
+        cookie.forEach(function(val,index){
+            if(val.split('=')[0] == 'pwd1'){
+                value = val.split('=')[1];
+            }
+        });
+        if(value == '123'){
+
+        }
+        else{
+            alert('登录时间已过期，请重新登录');
+            location.href = '../k_index.html';
+        }
+    </script>
+    <style>
+        @media screen and (max-width: 992px){
+
+        }
+        @media screen and (max-width:992px){
+            .body_right_left_xiao{
+                display: none;
+            }
+            .body_right_left_xiao{
+                display: block;
+            }
+            .body_left{
+                display: none;
+            }
+            .body_right{
+                margin-left: 0;
+            }
+            .body_right_middle{
+                margin-left: 0;
+            }
+            .s1{
+                margin-left: 0;
+            }
+        }
+        @media screen and (max-width: 768px){
+            #main1{width: 100%;}
+            #main2{width: 100%;}
+            #main3{width: 100%;}
+            #main4{width: 100%;}
+        }
+        .col-md-7{
+            width: auto;
+            float: none;
+        }
+        .box2_a3{
+            width: 60px;
+            height: 40px;
+            background: #2a6496;
+            text-align: center;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 40px;
+            float: right;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="col-md-7">
+                <span class="glyphicon glyphicon-leaf"></span>
+                <span>ACE公司管理系统</span>
+                <a href="JavaScript:;" class="box2_a3">退出</a>
+            </div>
+        </div>
+        <div class="body_left">
+            <p>
+                <span class="glyphicon glyphicon-signal"></span>
+                <span class="glyphicon glyphicon-pencil"></span>
+                <span class="glyphicon glyphicon-user"></span>
+                <span class="glyphicon glyphicon-cog"></span>
+            </p>
+            <p class="shou">
+                <span class="glyphicon glyphicon-home"></span>
+                <span>首页</span>
+            </p>
+            <p class="tian" style="background-color: #FFFFFF">
+                <span class="glyphicon glyphicon-edit"></span>
+                <span>员工添加</span>
+            </p>
+            <p class="xiu">
+                <span class="glyphicon glyphicon-edit"></span>
+                <span>数据修改</span>
+            </p>
+            <p class="kao">
+                <span class="glyphicon glyphicon-edit"></span>
+                <span>考勤查询</span>
+            </p>
+            <p class="tu">
+                <span class="glyphicon glyphicon-edit"></span>
+                <span>考勤比例图</span>
+            </p>
+            <p class="su" >
+                <span class="glyphicon glyphicon-edit"></span>
+                <span>搜索</span>
+            </p>
+        </div>
+        <div class="body_right">
+            <div class="body_right_top">
+                <a class="body_right_left_xiao glyphicon glyphicon-align-justify">MENU</a>
+                <span class="glyphicon glyphicon-home"></span>
+                <span>首页</span>
+                <span class="s1">
+                    员工搜索：
+                    <input type="text" placeholder="编号/身份证/名字/性别" id="sousuo_l">
+                    <span class="glyphicon glyphicon-search" id="sousuo_l2" style="cursor: pointer"></span>
+                </span>
+            </div>
+            <div class="body_right_middle">
+                <p>员工添加</p>
+                <table>
+                    <thead>
+                    <tr>
+                        <td style="width: 11%">编号</td>
+                        <td style="width: 6%">姓名</td>
+                        <td style="width: 6%">年龄</td>
+                        <td style="width: 6%">性别</td>
+                        <td style="width: 11%">身份证</td>
+                        <td style="width: 11%">手机号</td>
+                        <td style="width: 11%">QQ</td>
+                        <td style="width: 11%">岗位</td>
+                        <td style="width: 11%">入职时间</td>
+                        <td style="width: 9%">学历</td>
+                        <td style="width: 7%">操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="t2">
+                        <td><input type="text" style="background: #f5f5f5;" placeholder="编号自动生成" disabled="disabled"></td>
+                        <td class="ming"><input type="text" maxlength="4"></td>
+                        <td><input type="text" maxlength="2"></td>
+                        <td>
+                            <select name="cls" id="cls" style="color:#555;">
+                                <option name="cls" value="男">男</option>
+                                <option name="cls" value="女">女</option>
+                            </select>
+                        </td>
+                        <td><input type="text" maxlength="18" ></td>
+                        <td><input type="text" maxlength="11"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text" maxlength="10"></td>
+                        <td><input class="laydate-icon" id="demo" ></td>
+                        <td>
+                            <select name="cls" id="cls2" style="color:#555;">
+                                <option name="cls" value="小学">小学</option>
+                                <option name="cls" value="初中">初中</option>
+                                <option name="cls" value="高中">高中</option>
+                                <option name="cls" value="中专">中专</option>
+                                <option name="cls" value="大专">大专</option>
+                                <option name="cls" value="本科">本科</option>
+                                <option name="cls" value="研究生">研究生</option>
+                                <option name="cls" value="硕士">硕士</option>
+                                <option name="cls" value="博士">博士</option>
+                                <option name="cls" value="博士后">博士后</option>
+                            </select>
+                        </td>
+                        <td class="td"><input class="tianjia" type="button" value="添加" style="cursor: pointer;color:#fff;"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/base.js"></script>
+<script src="../js/tianjia.js"></script>
+<script>
+    !function(){
+        laydate({
+            elem: '#demo'
+        })
+    }();
+    $('.box2_a3').on('click',function () {
+        window.location.href = '../k_index.html';
+    })
+</script>
+</html>

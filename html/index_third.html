@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/index_three.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link  rel="stylesheet" href="../css/zhongxiaodie.css">
+    <script src="../js/echarts.min.js"></script>
+    <script src="../js/jquery-3.2.0.min.js"></script>
+    <script src="../js/zhongxiaodie.js"></script>
+    <title>ACE公司管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        var cookie = document.cookie.split('; ');
+        var value ='';
+        cookie.forEach(function(val,index){
+            if(val.split('=')[0] == 'pwd1'){
+                value = val.split('=')[1];
+            }
+        });
+        if(value == '123'){
+
+        }
+        else{
+            alert('登录时间已过期，请重新登录');
+            location.href = '../k_index.html';
+        }
+    </script>
+      <style>
+        @media screen and (max-width: 992px){
+
+        }
+        @media screen and (max-width:992px){
+            .body_right_left_xiao{
+                display: none;
+            }
+            .body_right_left_xiao{
+                display: block;
+            }
+            .body_left{
+                display: none;
+            }
+            .body_right{
+                margin-left: 0;
+            }
+            .body_right_middle{
+                margin-left: 0;
+            }
+            .s1{
+                margin-left: 0;
+            }
+        }
+        @media screen and (max-width: 768px){
+            #main1{width: 100%;}
+            #main2{width: 100%;}
+            #main3{width: 100%;}
+            #main4{width: 100%;}
+        }
+        .box2_a3{
+            width: 60px;
+            height: 40px;
+            background: #2a6496;
+            text-align: center;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 40px;
+            float: right;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row header">
+        <div>
+            <span class="glyphicon glyphicon-leaf"></span>
+            <span>ACE公司管理系统</span>
+            <a href="JavaScript:;" class="box2_a3">退出</a>
+        </div>
+    </div>
+    <div class="body_left">
+        <p>
+            <span class="glyphicon glyphicon-signal"></span>
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="glyphicon glyphicon-cog"></span>
+        </p>
+        <p class="shou">
+            <span class="glyphicon glyphicon-home"></span>
+            <span>首页</span>
+        </p>
+        <p class="tian">
+            <span class="glyphicon glyphicon-edit"></span>
+            <span>员工添加</span>
+        </p>
+        <p class="xiu">
+            <span class="glyphicon glyphicon-edit"></span>
+            <span>数据修改</span>
+        </p>
+        <p class="kao" style="background-color: #FFFFFF">
+            <span class="glyphicon glyphicon-edit"></span>
+            <span>考勤查询</span>
+        </p>
+        <p class="tu">
+            <span class="glyphicon glyphicon-edit"></span>
+            <span>考勤比例图</span>
+        </p>
+        <p class="su" >
+            <span class="glyphicon glyphicon-edit"></span>
+            <span>搜索</span>
+        </p>
+    </div>
+    <div class="body_right">
+        <div class="body_right_top">
+            <a class="body_right_left_xiao glyphicon glyphicon-align-justify">MENU</a>
+            <span class="glyphicon glyphicon-home"></span>
+            <span>首页</span>
+                <span class="s1">
+                    员工搜索：
+                    <input type="text" placeholder="编号/身份证/名字/性别" id="sousuo_l">
+                    <span class="glyphicon glyphicon-search" id="sousuo_l2" style="cursor: pointer"></span>
+                </span>
+        </div>
+        <div class="body_right_middle">
+            <p class="p3">打卡情况</p>
+            <table border="2">
+                <tr>
+                    <td>编号</td>
+                    <td>姓名</td>
+                    <td>周一上班时间</td>
+                    <td>周一下班时间</td>
+                    <td>周二上班时间</td>
+                    <td>周二下班时间</td>
+                    <td>周三上班时间</td>
+                    <td>周三下班时间</td>
+                    <td>周四上班时间</td>
+                    <td>周四下班时间</td>
+                    <td>周五上班时间</td>
+                    <td>周五下班时间</td>
+                </tr>
+            </table>
+            <div class="oum" style="width: 250px ; height: 50px;margin: auto;left: 600px;">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li><a href="#" id="a_1">1</a></li>
+                        <li><a href="#" id="two">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/base.js"></script>
+<script>
+    var num=01,name,go_time,dn_time;
+    $('#a_1').click(function () {
+        location.reload();
+    });
+    $.ajax({
+        url:'http://127.0.0.1:8000/crate',
+        type:'get',
+        dataType:'jsonp',
+        success: function (data,status) {
+            console.log(data.cont);
+            var str='';
+            $.each(data.cont, function (index, val) {
+                str+='<tr>'+
+                        '<td>'+val.number+'</td>'+
+                        '<td>'+val.name+'</td>'+
+                        '<td>'+val.s_daka_1+'</td>'+
+                        '<td>'+val.x_daka_1+'</td>'+
+                        '<td>'+val.s_daka_2+'</td>'+
+                        '<td>'+val.x_daka_2+'</td>'+
+                        '<td>'+val.s_daka_3+'</td>'+
+                        '<td>'+val.x_daka_3+'</td>'+
+                        '<td>'+val.s_daka_4+'</td>'+
+                        '<td>'+val.x_daka_4+'</td>'+
+                        '<td>'+val.s_daka_5+'</td>'+
+                        '<td>'+val.x_daka_5+'</td>'+
+                '</tr>'
+            });
+            $('table').find('tr').after(str);
+        },
+
+        error: function (err) {
+            console.log(err);
+        }
+    });
+   //---------------------------
+    $('#two').click(function () {
+        $.ajax({
+            url:'http://127.0.0.1:8000/crete',
+            type:'get',
+            dataType:'jsonp',
+            success: function (data,status) {
+                console.log(data.cont.length);
+                var str='';
+                $.each(data.cont, function (index, val) {
+                    console.log(data.cont);
+                    console.log(index);
+                    str+='<tr>'+
+                            '<td>'+val.number+'</td>'+
+                            '<td>'+val.name+'</td>'+
+                            '<td>'+val.s_daka_1+'</td>'+
+                            '<td>'+val.x_daka_1+'</td>'+
+                            '<td>'+val.s_daka_2+'</td>'+
+                            '<td>'+val.x_daka_2+'</td>'+
+                            '<td>'+val.s_daka_3+'</td>'+
+                            '<td>'+val.x_daka_3+'</td>'+
+                            '<td>'+val.s_daka_4+'</td>'+
+                            '<td>'+val.x_daka_4+'</td>'+
+                            '<td>'+val.s_daka_5+'</td>'+
+                            '<td>'+val.x_daka_5+'</td>'+
+                            '</tr>'
+                });
+                $('table').html(str);
+            },
+
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    })
+    $('.box2_a3').on('click',function () {
+        window.location.href = '../k_index.html';
+    })
+</script>
+</html>

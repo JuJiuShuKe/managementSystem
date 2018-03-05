@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公司管理系统</title>
+    <link  rel="stylesheet" href="../css/zhongxiaodie.css">
+    <script src="../js/zhongxiaodie.js"></script>
+    <script src="../js/jquery-3.2.0.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+</head>
+<body>
+    <h3 style="text-indent: 25px;font-size: 25px;margin-top:0; ">公司管理系统</h3>
+    <p class="p1">公司所有员工信息</p>
+    <div class="search">
+        <input type="text" placeholder="编号/身份证/名字/性别" id="sousuo_l">
+        <span class="glyphicon glyphicon-search" id="sousuo_l2" style="cursor: pointer"></span>
+    </div>
+
+    <div class="display">
+        <p class="p2">员工信息表</p>
+        <table class="form" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>编号</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+                <td>身份证</td>
+                <td>手机号</td>
+                <td>QQ号</td>
+                <td>岗位</td>
+                <td>入职时间</td>
+                <td>学历</td>
+                <td>操作</td>
+            </tr>
+        </table>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="add">
+        <input type="button" value="添加" id="add1">
+    </div>
+</body>
+</html>

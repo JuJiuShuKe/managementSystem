@@ -1,0 +1,112 @@
+/***********************登录页面的css**************/
+body{
+    background: url(../imgs/dd2.jpg) no-repeat;
+}
+.box_title{
+    text-indent: 25px;
+    font-size: 25px;
+    margin-top:0;
+}
+.box_login{
+    width: 600px;
+    height: 460px;
+    margin:50px auto;
+    background: url(../imgs/dd3.jpg);
+}
+.box_p1{
+    text-align: center;
+    font-size: 32px;
+    padding-top: 15px;
+}
+.box_div1{
+    width: 480px;
+    height: 305px;
+    margin: auto;
+}
+.box_p2{
+    text-align: center;
+    font-size: 20px;
+}
+.box_p2 > input{
+    width:200px;
+    height: 35px;
+}
+.box_a1{
+    width: 120px;
+    height: 45px;
+    display: inline-block;
+    border-radius: 8px;
+    background: #2a6496;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    text-align: center;
+    line-height: 45px;
+    margin-left: 37%;
+}
+/**************************员工打卡页面的css******************/
+.box2_p1{
+    text-indent: 25px;
+    font-size: 32px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.box2_table{
+    width: 70%;
+    margin: auto;
+}
+.box2_table td{
+    text-align: center;
+    font-size: 18px;
+    font-family: "Helvetic  qa Neue", Helvetica, Arial, sans-serif;
+}
+.box2_a1{
+    width: 50px;
+    height: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    margin-left: 5px;
+}
+.box2_a2{
+    width: 50px;
+    height: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    margin-left: 5px;
+}
+.box2_a3{
+    width: 100px;
+    height: 50px;
+    border-radius: 8px;
+    display: inline-block;
+    background: #2a6496;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    margin-left: 75%;
+    margin-top: 100px;
+}
+.box2_table2{
+    float: right;
+    position: relative;
+    top: -45px;
+    left: -103px;
+    width: 27%;
+}
+/**********************管理员页面的css**********************/
+.box3_table{
+    width: 75%;
+    margin: auto;
+}
+.box3_table td{
+    text-align: center;
+    font-size: 18px;
+    font-family: "Helvetic  qa Neue", Helvetica, Arial, sans-serif;
+}

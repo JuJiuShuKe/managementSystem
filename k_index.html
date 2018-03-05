@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<meta http-equiv=refresh content=15 >-->
+    <meta charset="UTF-8">
+    <title>公司管理系统</title>
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/k_index.js"></script>
+    <link rel="stylesheet" href="css/k_index.css">
+</head>
+<body>
+<h3 class="box_title">公司管理系统</h3>
+    <div class="box_login">
+        <p class="box_p1">登录</p>
+        <div class="box_div1">
+            <p class="box_p2 box_pp">
+                用户名：<input type="text" placeholder="请输入用户名" class="box_input1">
+            </p>
+            <p class="box_p2 box_pp">
+                &emsp;密码：<input type="password" placeholder="请输入密码" class="box_input2">
+            </p>
+            <p class="box_p2 box_pp2" style="display: none">
+                身份证：<input type="text" placeholder="请输入身份证" id="identity"  class="box_input3">
+             </p>
+            <p style="text-align: center;margin-top: 0;">
+                <input type="radio" name="log" class="box_yuangong">员工登录
+                <input type="radio" name="log" style="margin-left: 35px;" class="box_guanliy">管理员登录
+            </p>
+            <a href="JavaScript:;" class="box_a1">登录</a>
+        </div>
+        <p style="text-indent: 25px;font-size: 18px;color: #ff0000">注意：输入的内容以身份证号为准，请正确输入身份证号！</p>
+    </div>
+    <script>
+        var name='idcar';
+        var value=$('#identity').val();
+        setCookie(name,value );
+        function setCookie(name,value) {
+            document.cookie = ''+name+ '=' + value + ';expires=';
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.2.0.min.js"></script>
+    <script src="../js/tianjia.js"></script>
+    <style>
+        .zhuce_div1{
+            width: 15%;
+            margin: auto;
+            margin-top: 25px;
+        }
+        input{
+            height: 35px;
+            margin-top: 10px;
+        }
+        select{
+            height: 35px;
+            margin-top: 10px;
+        }
+        .box2_a3{
+            width: 60px;
+            height: 40px;
+            background: #2a6496;
+            text-align: center;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 40px;
+            float: right;
+            margin-right: 30px;
+            text-decoration: none;
+            margin-top: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div class="zhuce_div1">
+        &ensp;&ensp;&ensp;&ensp;姓名：<input type="text" placeholder="请输入你的姓名">
+        <br>
+        &ensp;&ensp;&ensp;&ensp;年龄：<input type="text" placeholder="请输入你的年龄">
+        <br>
+        &ensp;&ensp;&ensp;&ensp;性别：
+        <select name="cls" id="cls" style="color:#555;">
+            <option name="cls" value="男">男</option>
+            <option name="cls" value="女">女</option>
+        </select>
+        <br>
+        &ensp;&ensp;身份证：<input type="text" placeholder="请输入你的身份证">
+        <br>
+        电话号码：<input type="text" placeholder="请输入你的电话号码">
+        <br>
+        &ensp;QQ号码：<input type="text" placeholder="请输入你的QQ号码">
+        <br>
+        &ensp;&ensp;&ensp;&ensp;职业：<input type="text" placeholder="请输入你的职业">
+        <br>
+        入职时间：<input type="text" placeholder="请输入你的入职时间">
+        <br>
+        &ensp;&ensp;&ensp;&ensp;文凭：
+        <select name="cls" id="cls2" style="color:#555;">
+            <option name="cls" value="小学">小学</option>
+            <option name="cls" value="初中">初中</option>
+            <option name="cls" value="高中">高中</option>
+            <option name="cls" value="中专">中专</option>
+            <option name="cls" value="大专">大专</option>
+            <option name="cls" value="本科">本科</option>
+            <option name="cls" value="研究生">研究生</option>
+            <option name="cls" value="硕士">硕士</option>
+            <option name="cls" value="博士">博士</option>
+            <option name="cls" value="博士后">博士后</option>
+        </select>
+        <a href="JavaScript:;"  class="box2_a3">注册</a>
+    </div>
+</body>
+<script>
+    $('.box2_a3').on('click',function () {
+        window.location.href = '../k_index.html';
+    })
+</script>
+</html>

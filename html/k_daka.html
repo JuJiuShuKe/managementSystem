@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息表</title>
+    <script src="../js/jquery-3.2.0.min.js"></script>
+    <script src="../js/k_index.js"></script>
+    <link rel="stylesheet" href="../css/k_index.css">
+    <script>
+        var cookie = document.cookie.split('; ');
+        var value ='';
+        cookie.forEach(function(val,index){
+            if(val.split('=')[0] == 'pwd2'){
+                value = val.split('=')[1];
+            }
+        });
+        if(value == '456'){
+
+        }
+        else{
+            alert('登录时间已过期，请重新登录');
+            location.href = '../k_index.html';
+        }
+        $('.box2_a3').on('click',function () {
+            window.location.href = '../k_index.html';
+        })
+    </script>
+</head>
+<body style="background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497430692474&di=00b77f4ee3f1a3dea89977d14b618fa4&imgtype=0&src=http%3A%2F%2Fimg1.cache.netease.com%2Fcatchpic%2F3%2F38%2F38082248608DA1D861E9D3FA6F71BADE.jpg) no-repeat;background-size:100%;">
+    <p class="box2_p1">员工信息：</p>
+    <table border="1" cellpadding="0" cellspacing="0"  class="box2_table" style="margin: 0;width: 50%">
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>身份证号</td>
+            <td>上班打卡</td>
+            <td>下班打卡</td>
+        </tr>
+    </table>
+    <table border="1" cellpadding="0" cellspacing="0" class="box2_table2">
+        <tr>
+            <td>上班打卡时间</td>
+            <td>下班打卡时间</td>
+        </tr>
+    </table>
+    <a href="JavaScript:;" class="box2_a3">退出</a>
+</body>
+</html>
